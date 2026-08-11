@@ -1,0 +1,11 @@
+
+module ssh_lb_nginx 1.0;
+
+require {
+	type ssh_port_t;
+	type httpd_t;
+	class tcp_socket name_bind;
+}
+
+#============= httpd_t ==============
+allow httpd_t ssh_port_t:tcp_socket name_bind;
